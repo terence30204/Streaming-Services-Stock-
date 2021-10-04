@@ -1,2 +1,7 @@
-# Streaming-Services-Stock-
-SQL Queries to analyze stock prices of streaming services.
+Database on stock prices of three of the largest streaming services.
+
+Netflix Dataset:
+
+Amazon Dataset:
+
+Walt Disney Dataset:
