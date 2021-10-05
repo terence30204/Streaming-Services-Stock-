@@ -1,0 +1,32 @@
+CREATE TABLE Netflix(
+  Date DATE PRIMARY KEY, 
+  Open_Price varchar(50), 
+  High_Price varchar(50), 
+  Low_Price varchar(50), 
+  Closing_Price varchar(50), 
+  Volume_Traded INT, 
+  Dividends INT, 
+  Stock_Splits varchar(50)
+  )
+
+CREATE TABLE Amazon(
+  Date DATE PRIMARY KEY, 
+  Open_Price varchar(50), 
+  High_Price varchar(50), 
+  Low_Price varchar(50), 
+  Closing_Price varchar(50),
+  Adj_Close varchar(50),
+  Volume_Traded INT,
+  FOREIGN KEY (Date) REFERENCES netflix(date)
+  )
+
+CREATE TABLE Disney(
+  Date DATE PRIMARY KEY, 
+  Open_Price varchar(50), 
+  High_Price varchar(50), 
+  Low_Price varchar(50), 
+  Closing_Price varchar(50),
+  Adj_Close varchar(50),
+  Volume_Traded INT,
+  FOREIGN KEY (Date) REFERENCES netflix(date)
+  )
