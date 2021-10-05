@@ -30,3 +30,8 @@ CREATE TABLE Disney(
   Volume_Traded INT,
   FOREIGN KEY (Date) REFERENCES netflix(date)
   )
+
+#import datasets to respective tables
+
+
+
