@@ -33,5 +33,38 @@ CREATE TABLE Disney(
 
 #import datasets to respective tables
 
+#Data Analysis
+
+#chose the initial stages of the pandemic as the date range
+SELECT (high_price)
+  FROM amazon
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+
+SELECT (high_price)
+  FROM disney
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+
+SELECT (high_price)
+  FROM netflix
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+  
+SELECT AVG(amazon.High_Price), AVG(disney.High_Price)
+  FROM amazon JOIN disney ON amazon.Date = disney.Date
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+  
+SELECT AVG(amazon.High_Price), AVG(netflix.High_Price)
+  FROM amazon JOIN netflix ON amazon.Date = netflix.Date
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+
+SELECT AVG(amazon.High_Price), AVG(disney.High_Price), AVG(netflix.High_Price)
+  FROM amazon JOIN disney ON amazon.Date = disney.Date
+  FROM amazon JOIN netflix On amazon.Date = disney.DAte
+  WHERE date BETWEEN 2010-03-02 AND 2020-07-31
+
+
+
+
+
+
 
 
