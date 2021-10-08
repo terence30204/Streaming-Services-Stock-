@@ -61,7 +61,54 @@ SELECT AVG(amazon.High_Price), AVG(disney.High_Price), AVG(netflix.High_Price)
   FROM amazon JOIN netflix On amazon.Date = disney.DAte
   WHERE date BETWEEN 2010-03-02 AND 2020-07-31
 
+SELECT open_price AS 'Open Price',
+  CASE WHEN open_price < 1000 THEN 'Low'
+  WHEN open_price BETWEEN 1000 AND 2000 THEN 'Medium'
+  ELSE 'High'
+  END
+  FROM amazon
+  
+SELECT open_price AS 'Open Price',
+  CASE WHEN open_price < 1 THEN 'Low'
+  WHEN open_price BETWEEN 1 AND 50 THEN 'Medium'
+  ELSE 'High'
+  END
+  FROM disney 
 
+SELECT open_price AS 'Open Price',
+  CASE WHEN open_price < 10 THEN 'Low'
+  WHEN open_price BETWEEN 10 AND 100 THEN 'Medium'
+  ELSE 'High'
+  END
+  FROM netflix
+
+SELECT COUNT(date) AS Dates
+  FROM amazon
+  WHERE low_prices < 2000
+  GROUP BY date
+  
+SELECT COUNT(date) AS Dates
+  FROM disney
+  WHERE low_prices < 100
+  GROUP BY date
+  
+SELECT COUNT(date) AS Dates
+  FROM netflix
+  WHERE low_prices < 500
+  GROUP BY date
+
+SELECT date, MAX(volume_traded) AS 'Maximum Volume Traded'
+  FROM amazon
+
+SELECT date, MAX(volume_traded) AS 'Maximum Volume Traded'
+  FROM disney
+
+SELECT date, MAX(volume_traded) AS 'Maximum Volume Traded'
+  FROM netflix
+
+SELECT date
+ FROM netflix
+ WHERE stock_splits != 0
 
 
 
