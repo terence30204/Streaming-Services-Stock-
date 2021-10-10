@@ -122,10 +122,25 @@ SELECT AVG(amazon.closing_price) AS 'Amazon CP', AVG(netflix.Closing_Price) AS '
   JOIN disney ON amazon.Date = disney.Date 
   WHERE amazon.Date BETWEEN 2020-01-02 AND 2021-07-31
 
+SELECT date, MAX(open_price) AS 'Maximum Opening Price', closing_price
+  FROM amazon
+  
+SELECT date, MAX(open_price) AS 'Maximum Opening Price', closing_price
+  FROM netflix
+  
+SELECT date, MAX(open_price) AS 'Maximum Opening Price', closing_price
+  FROM disney
+  
+SELECT COUNT(low_price) AS 'Number of Low Prices'
+  FROM amazon
+  WHERE low_price > 1000
 
+SELECT COUNT(low_price) AS 'Number of Low Prices'
+  FROM netflix
+  WHERE low_price > 500
 
-
-
-
+SELECT COUNT(low_price) AS 'Number of Low Prices'
+  FROM disney
+  WHERE low_price > 100
 
 
