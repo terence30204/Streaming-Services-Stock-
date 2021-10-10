@@ -110,6 +110,20 @@ SELECT date
  FROM netflix
  WHERE stock_splits != 0
 
+SELECT AVG(amazon.closing_price) AS 'Amazon CP', AVG(netflix.Closing_Price) AS 'Netflix CP', AVG(disney.Closing_Price) AS 'Disney CP'
+  FROM amazon 
+  JOIN netflix ON amazon.Date = netflix.Date
+  JOIN disney ON amazon.Date = disney.Date 
+  
+  
+SELECT AVG(amazon.closing_price) AS 'Amazon CP', AVG(netflix.Closing_Price) AS 'Netflix CP', AVG(disney.Closing_Price) AS 'Disney CP'
+  FROM amazon 
+  JOIN netflix ON amazon.Date = netflix.Date
+  JOIN disney ON amazon.Date = disney.Date 
+  WHERE amazon.Date BETWEEN 2020-01-02 AND 2021-07-31
+
+
+
 
 
 
