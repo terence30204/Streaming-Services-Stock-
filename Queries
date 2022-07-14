@@ -81,6 +81,21 @@ SELECT open_price AS 'Open Price',
   ELSE 'High'
   END
   FROM netflix
+  
+SELECT COUNT(DISTINCT Date) AS Dates
+  FROM disney 
+  WHERE disney.Low_Price > 100 
+
+SELECT High_Price, Low_Price, Closing_Price
+  FROM netflix
+  WHERE High_Price < 1 AND Low_Price < 1 
+  GROUP BY High_Price, Low_Price, Closing_Price WITH ROLLUP
+
+SELECT High_Price, Low_Price, Closing_Price 
+  FROM netflix 
+  WHERE High_Price < 1 AND Low_Price < 1 
+  GROUP BY High_Price
+  ORDER BY High_Price, Low_Price DESC
 
 SELECT COUNT(date) AS Dates
   FROM amazon
@@ -149,24 +164,5 @@ SELECT * FROM `amazon`
   JOIN netflix ON amazon.Date = netflix.Date 
   JOIN disney ON amazon.Date = disney.Date 
   WHERE amazon.Volume_Traded > 500000
-
-SELECT COUNT(DISTINCT Date) AS Dates
-  FROM disney 
-  WHERE disney.Low_Price > 100 
-
-SELECT High_Price, Low_Price, Closing_Price
-  FROM netflix
-  WHERE High_Price < 1 AND Low_Price < 1 
-  GROUP BY High_Price, Low_Price, Closing_Price WITH ROLLUP
-
-SELECT High_Price, Low_Price, Closing_Price 
-  FROM netflix 
-  WHERE High_Price < 1 AND Low_Price < 1 
-  GROUP BY High_Price
-  ORDER BY High_Price, Low_Price DESC
-
-
-
-
 
 
